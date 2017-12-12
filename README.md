@@ -10,5 +10,7 @@
 
 =====================
 вопросы-наезды-предложения: wtfquestioninfo@yandex.ru
+
 задонатить автору немного майнексов: XLJ2FXXB7gRLFiThd7WGyVgerhXje5FqBR
+
 исходники-обновы-релизы: https://github.com/BarillaUser/MPC
