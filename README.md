@@ -14,7 +14,7 @@
 * вопросы-наезды-предложения: wtfquestioninfo@yandex.ru 
 * задонатить автору немного майнексов: XLJ2FXXB7gRLFiThd7WGyVgerhXje5FqBR 
 * исходники-обновы-релизы: https://github.com/BarillaUser/MPC
- 
+* скачать скомпилированный релиз: https://github.com/BarillaUser/MPC/files/1552709/MinexbankPC.zip 
 =====================
  
 <h3>скриншоты:</h3>
