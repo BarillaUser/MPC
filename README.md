@@ -1,6 +1,6 @@
 # MPC 
-MinexBank Profit Calculator
-Простенький калькулятор профита от паркинга в MinexBank-е
+<h3>MinexBank Profit Calculator</h3>
+<h3>Простенький калькулятор профита от паркинга в MinexBank-е</h3>
 ===========================
 
 Главная отличительная фича от официального браузерного калькулятора заключается в
@@ -10,6 +10,6 @@ MinexBank Profit Calculator
 В калькуляторе присутсвует возможность запросить актуальные ставки с сайта minexbak-a.
 
 =====================
-вопросы-наезды-предложения: wtfquestioninfo@yandex.ru 
-задонатить автору немного майнексов: XLJ2FXXB7gRLFiThd7WGyVgerhXje5FqBR 
-исходники-обновы-релизы: https://github.com/BarillaUser/MPC
+* вопросы-наезды-предложения: wtfquestioninfo@yandex.ru 
+* задонатить автору немного майнексов: XLJ2FXXB7gRLFiThd7WGyVgerhXje5FqBR 
+* исходники-обновы-релизы: https://github.com/BarillaUser/MPC
