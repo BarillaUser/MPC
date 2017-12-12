@@ -1,5 +1,4 @@
-# MPC
-MPC - MinexBank Profit Calculator
+# MPC - MinexBank Profit Calculator
 Простенький калькулятор профита от паркинга в MinexBank-е
 ===========================
 
