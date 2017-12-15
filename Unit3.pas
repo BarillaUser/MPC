@@ -5,7 +5,7 @@ interface
 {
 *************************************************************************
 prj: MinexBank Profit Calculator
-ver: 0.1
+ver: 0.2
 wtf address : inbox2@zoho.com
 donate MNX  : XLJ2FXXB7gRLFiThd7WGyVgerhXje5FqBR
 
@@ -19,11 +19,16 @@ Used components\libs:
 uses
   Winapi.Windows, Winapi.Messages,  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
-  cxContainer, cxEdit, dxSkinsCore, dxSkinOffice2016Dark, cxTextEdit, cxMemo;
+  cxContainer, cxEdit, dxSkinsCore, dxSkinOffice2016Dark, cxTextEdit,
+   Vcl.Menus, cxCheckBox, cxLabel, cxMaskEdit, cxDropDownEdit, Vcl.StdCtrls, cxButtons, cxGroupBox;
 
 type
   TForm3 = class(TForm)
-    cxMemo1: TcxMemo;
+    cxGroupBox1: TcxGroupBox;
+    cxButton1: TcxButton;
+    cxComboBox1: TcxComboBox;
+    cxLabel1: TcxLabel;
+    cxCheckBox1: TcxCheckBox;
   private
     { Private declarations }
   public

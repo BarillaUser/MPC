@@ -3,8 +3,8 @@ object Form1: TForm1
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'Minexbank Profit Calculator v0.1'
-  ClientHeight = 255
+  Caption = 'Minexbank Profit Calculator v0.2'
+  ClientHeight = 458
   ClientWidth = 420
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,9 +19,9 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object cxButton1: TcxButton
-    Left = 284
-    Top = 123
-    Width = 125
+    Left = 276
+    Top = 175
+    Width = 136
     Height = 25
     Caption = 'Calculate'
     LookAndFeel.NativeStyle = False
@@ -53,7 +53,7 @@ object Form1: TForm1
   end
   object dxStatusBar1: TdxStatusBar
     Left = 0
-    Top = 235
+    Top = 438
     Width = 420
     Height = 20
     Panels = <>
@@ -65,13 +65,14 @@ object Form1: TForm1
     Font.Height = -11
     Font.Name = 'Verdana'
     Font.Style = []
+    ExplicitTop = 235
   end
   object cxButton2: TcxButton
-    Left = 284
-    Top = 92
-    Width = 125
+    Left = 276
+    Top = 144
+    Width = 136
     Height = 25
-    Caption = 'Update rates'
+    Caption = 'Update rates && prices'
     LookAndFeel.NativeStyle = False
     OptionsImage.Glyph.SourceDPI = 96
     OptionsImage.Glyph.Data = {
@@ -100,14 +101,20 @@ object Form1: TForm1
     OnClick = cxButton2Click
   end
   object cxGroupBox2: TcxGroupBox
-    Left = 6
-    Top = 8
-    Caption = 'bank rates (update: 20.12.2017)'
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Margins.Bottom = 0
+    Align = alTop
+    Caption = '[minexbank.com] rates (update: 15.12.2017)'
     Style.LookAndFeel.NativeStyle = False
     StyleDisabled.LookAndFeel.NativeStyle = False
     TabOrder = 3
+    ExplicitLeft = 6
+    ExplicitTop = 8
+    ExplicitWidth = 403
     Height = 44
-    Width = 403
+    Width = 414
     object cxLabel10: TcxLabel
       Tag = 1
       Left = 106
@@ -236,344 +243,700 @@ object Form1: TForm1
     end
   end
   object cxGroupBox3: TcxGroupBox
-    Left = 6
-    Top = 52
-    Caption = 'parking round'
+    Left = 3
+    Top = 133
+    Caption = 'parking settings'
     Style.LookAndFeel.NativeStyle = False
     StyleDisabled.LookAndFeel.NativeStyle = False
     TabOrder = 4
-    Height = 109
+    Height = 164
     Width = 267
     object cxPageControl1: TcxPageControl
       Left = 3
-      Top = 15
+      Top = 44
       Width = 261
-      Height = 84
-      Align = alClient
+      Height = 110
+      Align = alBottom
       TabOrder = 0
       Properties.ActivePage = cxTabSheet1
       Properties.CustomButtons.Buttons = <>
       LookAndFeel.NativeStyle = False
-      OnChange = cxPageControl1Change
-      ClientRectBottom = 82
+      ExplicitTop = 50
+      ClientRectBottom = 108
       ClientRectLeft = 2
       ClientRectRight = 259
       ClientRectTop = 26
       object cxTabSheet1: TcxTabSheet
         Caption = 'Day'
         ImageIndex = 0
-        object cxLabel17: TcxLabel
-          Left = 9
-          Top = 4
-          Caption = 'parking amount'
-          Style.TextColor = clLime
-          Transparent = True
-        end
-        object cxSpinEdit1: TcxSpinEdit
-          Left = 93
-          Top = 3
-          Properties.AssignedValues.MinValue = True
-          Properties.ImmediatePost = True
-          Properties.ValueType = vtFloat
-          TabOrder = 1
-          Value = 12.500000000000000000
-          Width = 121
-        end
-        object cxLabel18: TcxLabel
-          Left = 220
-          Top = 4
-          Caption = 'MNX'
-          Style.TextColor = clLime
-          Transparent = True
-        end
+        ExplicitLeft = 3
+        ExplicitHeight = 64
         object cxLabel19: TcxLabel
-          Left = 220
-          Top = 31
+          Left = 226
+          Top = 6
           Caption = '%'
           Style.TextColor = clLime
           Transparent = True
         end
         object cxSpinEdit2: TcxSpinEdit
-          Left = 93
-          Top = 30
+          Left = 99
+          Top = 5
           Properties.AssignedValues.MinValue = True
           Properties.ValueType = vtFloat
-          TabOrder = 4
+          TabOrder = 1
           Value = 0.590000000000000000
           Width = 121
         end
         object cxLabel20: TcxLabel
-          Left = 9
-          Top = 31
+          Left = 15
+          Top = 6
           Caption = 'parking rate'
           Style.TextColor = clLime
           Transparent = True
+        end
+        object cxLabel2: TcxLabel
+          Left = 15
+          Top = 33
+          Caption = 'park for'
+          Style.TextColor = clLime
+          Transparent = True
+        end
+        object cxSpinEdit1: TcxSpinEdit
+          Left = 99
+          Top = 32
+          Properties.MinValue = 1.000000000000000000
+          Properties.ValueType = vtInt
+          Style.LookAndFeel.NativeStyle = False
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 4
+          Value = 365
+          Width = 69
+        end
+        object cxLabel4: TcxLabel
+          Left = 174
+          Top = 33
+          Caption = 'day(s)'
+          Style.TextColor = clLime
+          Transparent = True
+        end
+        object cxCheckBox2: TcxCheckBox
+          Left = 15
+          Top = 59
+          Caption = 'include profit from every day'
+          State = cbsChecked
+          Style.LookAndFeel.NativeStyle = False
+          Style.TextColor = 15066597
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 6
+          Transparent = True
+          Width = 161
         end
       end
       object cxTabSheet2: TcxTabSheet
         Caption = 'Week'
         ImageIndex = 1
-        object cxLabel2: TcxLabel
-          Left = 9
-          Top = 4
-          Caption = 'parking amount'
-          Style.TextColor = clLime
-          Transparent = True
-        end
+        ExplicitHeight = 56
         object cxLabel3: TcxLabel
-          Left = 9
-          Top = 31
+          Left = 15
+          Top = 6
           Caption = 'parking rate'
           Style.TextColor = clLime
           Transparent = True
         end
         object cxSpinEdit4: TcxSpinEdit
-          Left = 93
-          Top = 30
+          Left = 99
+          Top = 5
           Properties.AssignedValues.MinValue = True
           Properties.ValueType = vtFloat
-          TabOrder = 2
+          TabOrder = 1
           Value = 4.500000000000000000
           Width = 121
         end
-        object cxSpinEdit5: TcxSpinEdit
-          Left = 93
-          Top = 3
-          Properties.AssignedValues.MinValue = True
-          Properties.ValueType = vtFloat
-          TabOrder = 3
-          Value = 12.500000000000000000
-          Width = 121
-        end
-        object cxLabel4: TcxLabel
-          Left = 220
-          Top = 4
-          Caption = 'MNX'
-          Style.TextColor = clLime
-          Transparent = True
-        end
         object cxLabel5: TcxLabel
-          Left = 220
-          Top = 31
+          Left = 226
+          Top = 6
           Caption = '%'
           Style.TextColor = clLime
           Transparent = True
+        end
+        object cxLabel6: TcxLabel
+          Left = 15
+          Top = 33
+          Caption = 'park for'
+          Style.TextColor = clLime
+          Transparent = True
+        end
+        object cxSpinEdit5: TcxSpinEdit
+          Left = 99
+          Top = 32
+          Properties.MinValue = 1.000000000000000000
+          Properties.ValueType = vtInt
+          Style.LookAndFeel.NativeStyle = False
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 4
+          Value = 52
+          Width = 69
+        end
+        object cxLabel8: TcxLabel
+          Left = 174
+          Top = 33
+          Caption = 'week(s)'
+          Style.TextColor = clLime
+          Transparent = True
+        end
+        object cxCheckBox3: TcxCheckBox
+          Left = 15
+          Top = 59
+          Caption = 'include profit from every day'
+          State = cbsChecked
+          Style.LookAndFeel.NativeStyle = False
+          Style.TextColor = 15066597
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 6
+          Transparent = True
+          Width = 161
         end
       end
       object cxTabSheet3: TcxTabSheet
         Caption = 'Month'
         ImageIndex = 2
-        object cxLabel6: TcxLabel
-          Left = 9
-          Top = 4
-          Caption = 'parking amount'
-          Style.TextColor = clLime
-          Transparent = True
-        end
+        ExplicitHeight = 56
         object cxLabel7: TcxLabel
-          Left = 9
-          Top = 31
+          Left = 15
+          Top = 6
           Caption = 'parking rate'
           Style.TextColor = clLime
           Transparent = True
         end
         object cxSpinEdit6: TcxSpinEdit
-          Left = 93
-          Top = 30
+          Left = 99
+          Top = 5
           Properties.AssignedValues.MinValue = True
           Properties.ValueType = vtFloat
-          TabOrder = 2
+          TabOrder = 1
           Value = 13.900000000000000000
           Width = 121
         end
-        object cxSpinEdit7: TcxSpinEdit
-          Left = 93
-          Top = 3
-          Properties.AssignedValues.MinValue = True
-          Properties.ValueType = vtFloat
-          TabOrder = 3
-          Value = 12.500000000000000000
-          Width = 121
-        end
-        object cxLabel8: TcxLabel
-          Left = 220
-          Top = 4
-          Caption = 'MNX'
-          Style.TextColor = clLime
-          Transparent = True
-        end
         object cxLabel22: TcxLabel
-          Left = 220
-          Top = 31
+          Left = 226
+          Top = 6
           Caption = '%'
           Style.TextColor = clLime
           Transparent = True
+        end
+        object cxLabel17: TcxLabel
+          Left = 15
+          Top = 33
+          Caption = 'park for'
+          Style.TextColor = clLime
+          Transparent = True
+        end
+        object cxSpinEdit7: TcxSpinEdit
+          Left = 99
+          Top = 32
+          Properties.MinValue = 1.000000000000000000
+          Properties.ValueType = vtInt
+          Style.LookAndFeel.NativeStyle = False
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 4
+          Value = 12
+          Width = 69
+        end
+        object cxLabel18: TcxLabel
+          Left = 174
+          Top = 33
+          Caption = 'month(s)'
+          Style.TextColor = clLime
+          Transparent = True
+        end
+        object cxCheckBox4: TcxCheckBox
+          Left = 15
+          Top = 59
+          Caption = 'include profit from every day'
+          State = cbsChecked
+          Style.LookAndFeel.NativeStyle = False
+          Style.TextColor = 15066597
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 6
+          Transparent = True
+          Width = 161
         end
       end
       object cxTabSheet4: TcxTabSheet
         Caption = 'Year'
         ImageIndex = 3
-        object cxLabel23: TcxLabel
-          Left = 9
-          Top = 4
-          Caption = 'parking amount'
-          Style.TextColor = clLime
-          Transparent = True
-        end
+        ExplicitHeight = 56
         object cxLabel24: TcxLabel
-          Left = 9
-          Top = 31
+          Left = 15
+          Top = 6
           Caption = 'parking rate'
           Style.TextColor = clLime
           Transparent = True
         end
         object cxSpinEdit8: TcxSpinEdit
-          Left = 93
-          Top = 30
+          Left = 99
+          Top = 5
           Properties.AssignedValues.MinValue = True
           Properties.ValueType = vtFloat
-          TabOrder = 2
+          TabOrder = 1
           Value = 70.000000000000000000
           Width = 121
         end
-        object cxSpinEdit9: TcxSpinEdit
-          Left = 93
-          Top = 3
-          Properties.AssignedValues.MinValue = True
-          Properties.ValueType = vtFloat
-          TabOrder = 3
-          Value = 12.500000000000000000
-          Width = 121
-        end
-        object cxLabel25: TcxLabel
-          Left = 220
-          Top = 4
-          Caption = 'MNX'
-          Style.TextColor = clLime
-          Transparent = True
-        end
         object cxLabel26: TcxLabel
-          Left = 220
-          Top = 31
+          Left = 226
+          Top = 6
           Caption = '%'
           Style.TextColor = clLime
           Transparent = True
         end
+        object cxLabel23: TcxLabel
+          Left = 15
+          Top = 33
+          Caption = 'park for'
+          Style.TextColor = clLime
+          Transparent = True
+        end
+        object cxSpinEdit9: TcxSpinEdit
+          Left = 99
+          Top = 32
+          Properties.MinValue = 1.000000000000000000
+          Properties.ValueType = vtInt
+          Style.LookAndFeel.NativeStyle = False
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 4
+          Value = 1
+          Width = 69
+        end
+        object cxLabel25: TcxLabel
+          Left = 174
+          Top = 33
+          Caption = 'year(s)'
+          Style.TextColor = clLime
+          Transparent = True
+        end
+        object cxCheckBox5: TcxCheckBox
+          Left = 15
+          Top = 59
+          Caption = 'include profit from every day'
+          State = cbsChecked
+          Style.LookAndFeel.NativeStyle = False
+          Style.TextColor = 15066597
+          StyleDisabled.LookAndFeel.NativeStyle = False
+          StyleFocused.LookAndFeel.NativeStyle = False
+          StyleHot.LookAndFeel.NativeStyle = False
+          TabOrder = 6
+          Transparent = True
+          Width = 161
+        end
       end
     end
-  end
-  object cxGroupBox4: TcxGroupBox
-    Left = 6
-    Top = 161
-    Caption = 'calc settings'
-    Style.LookAndFeel.NativeStyle = False
-    StyleDisabled.LookAndFeel.NativeStyle = False
-    TabOrder = 5
-    Height = 69
-    Width = 267
-    object cxLabel21: TcxLabel
+    object cxLabel31: TcxLabel
       Left = 10
-      Top = 18
-      Caption = 'calc for'
-      Style.TextColor = 15066597
-      Transparent = True
-    end
-    object cxSpinEdit3: TcxSpinEdit
-      Left = 57
       Top = 17
-      Properties.MinValue = 1.000000000000000000
-      Properties.ValueType = vtInt
-      Style.LookAndFeel.NativeStyle = False
-      StyleDisabled.LookAndFeel.NativeStyle = False
-      StyleFocused.LookAndFeel.NativeStyle = False
-      StyleHot.LookAndFeel.NativeStyle = False
-      TabOrder = 1
-      Value = 3
-      Width = 69
-    end
-    object cxCheckBox1: TcxCheckBox
-      Left = 10
-      Top = 41
-      Caption = 'include profit from every round'
-      State = cbsChecked
-      Style.LookAndFeel.NativeStyle = False
-      Style.TextColor = 15066597
-      StyleDisabled.LookAndFeel.NativeStyle = False
-      StyleFocused.LookAndFeel.NativeStyle = False
-      StyleHot.LookAndFeel.NativeStyle = False
-      TabOrder = 2
+      Caption = 'parking amount'
+      Style.TextColor = clLime
       Transparent = True
-      Width = 171
     end
-    object cxLabel1: TcxLabel
-      Left = 132
-      Top = 18
-      Caption = 'round(s) = day(s)'
-      Style.TextColor = 15066597
+    object cxSpinEdit12: TcxSpinEdit
+      Left = 94
+      Top = 16
+      Properties.AssignedValues.MinValue = True
+      Properties.ImmediatePost = True
+      Properties.ValueType = vtFloat
+      TabOrder = 2
+      Value = 12.500000000000000000
+      Width = 135
+    end
+    object cxLabel32: TcxLabel
+      Left = 235
+      Top = 17
+      Caption = 'MNX'
+      Style.TextColor = clLime
       Transparent = True
     end
   end
-  object cxButton3: TcxButton
-    Left = 284
-    Top = 154
-    Width = 125
+  object cxButton4: TcxButton
+    Left = 276
+    Top = 272
+    Width = 136
     Height = 25
-    Caption = 'View detailed result'
+    Caption = 'Info'
     LookAndFeel.NativeStyle = False
     OptionsImage.Glyph.SourceDPI = 96
     OptionsImage.Glyph.Data = {
       89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
       610000001974455874536F6674776172650041646F626520496D616765526561
-      647971C9653C0000000E744558745469746C65004C697374426F783B0357E96A
-      0000018E49444154785E7D52BD4A0341109E4DA258F82242109B44B03168A388
-      58042120162156561AD427B0129F40D1222068A18520D828DA5AA8A04F72C118
-      DDDB19776677E3925C32DCCECF31F3CDB7335B2022504AE54EAFDE1E544E5580
-      85F8634B6CE50445A00075FABCBD595A24225300272AF9D29566BD14EAC13B99
-      727CF632CF35EC07003086B821202BF9A8D799E8DF1F1FCBDB5C847E00658C81
-      20E737EF805C6815A2834A920EEC36E604CCE020001894DB4A516DA518B1573D
-      468C4A79080CA08F0102F9C4CBBBCF4C063BF559C93169160383D215D1C0FA52
-      314C9CAD67C160E8AF3082015A7B71FB110D94844DD2FE8666BD0C04A3181009
-      83DAEAB4BB772000CA6D85527B86CC0019C00FB365B7E09A93585649BB037B8D
-      B26F92C98037E066B0B13613BA7BE502A25F4092DC0100952202FA35B6AE5FC3
-      E3E1586CDB32D8DF2A010E1922A01BA248A33A05CA0D5E6C2C8490FD901049D0
-      C726265D224545F12AF9643040FDD37D3C38BC5F90C218A16F131C68DD7DB24E
-      1A03E893A3EAB28F150C4AFC8F7CB1E6E00F942D47B1285CD8E9000000004945
-      4E44AE426082}
-    TabOrder = 6
-    OnClick = cxButton3Click
-  end
-  object cxButton4: TcxButton
-    Left = 284
-    Top = 203
-    Width = 125
-    Height = 25
-    Caption = 'About'
-    LookAndFeel.NativeStyle = False
-    TabOrder = 7
+      647971C9653C0000000E744558745469746C650044657461696C733B3496FF4C
+      000002F449444154785E85916B485C471886DF397BCE5E5C77D7B58B26BA22BA
+      66AB62A80A26AD622F1416FC51AC480225816090FE28810453213590B63F4A9B
+      42A084D236A50905A56D6809FD2185B4A5604C40E996129BE83146E325D9B866
+      E32D7B3D67CE7C9DD5B6F447C0071E9819785FF8E66344847F89847D304CD1C9
+      B9D5679AA2D9E42226EFEFDEDEB42E93044F41C1FF300D51EBD0D4EFEAF754BC
+      D8D2182A7CAEBE22ACA9B6A13A8FFA5EA840F5EE58C085782B50EC7372CBC2E4
+      F42226A61EA0B921AC084E67982506762EE014640AB0BC2610E93E8C0B839FE0
+      D01B1156ECD612DCA2861D0B0C6E4DCCCE3FA26F7F1DC5DBA78E221C24B89C69
+      B4853C76021EEF58B0B0C92F9597FA4D5555616ECE22B9B60ACBC8C232393604
+      CEE36910D17F4AFCEF1F6889EA233F5222FA19DDBA729C864EBE4C5DD5EE0900
+      6DD23A6995342075489902C9D0813230C654009E743239A38F0E439F5CC6ED3F
+      74FC36BE824977A4B4B2F5F495EA573EFE2BB8AF7FA4A4E1C8796F596BBED0C5
+      B08DA336600F1F6DF25EA8A92C79E166DC8D42470E532B0CE3C6F3A0F2D7A0B8
+      76A1B5713746C674E4D666905A1EBB9159D5DF81446D2977365DEC0E26A2E70E
+      D2C2F7FD74EAF55769F8F33E8A74F4527DF73035BDB9443D676394A7E7833B14
+      EABE46656D67A9A8BAF34B06C077FAA5673E8DB4371FAEDCBB17D9F80C6E4EAD
+      E0975B695CA70E685507C1343FB899C5FE5A0DA37FC6C18D2CCC278B482F5DD5
+      15009E92425B7B717910E67A0C3C99C0B3BB0991460EAE0500CDBB153ED6E5C7
+      A5813D5B618BE740B64210A39002C0E9B12BBB0A7C3EF0D42A48612026605701
+      B7B80F63734906B238F7CD1C24F9F3963C1D836566A795ED57421E6164FE5929
+      43819DA1C635B7F561DC48E184DC549E93876A20CCFC08F3103CF3B30A603DFA
+      303768FBE1722F178020808390330482990CE69236C4B31BF8F08B003EFAEA77
+      98A987327C4F8EABFF24CC275F3300AAD42F2D913AB10D932A5287C35B55E728
+      AAE950344F23981AB4CCD45DC1B357054F5ECCC4C727FF063F187055CFC115E1
+      0000000049454E44AE426082}
+    TabOrder = 5
     OnClick = cxButton4Click
   end
-  object cxComboBox1: TcxComboBox
-    Left = 284
-    Top = 58
+  object cxGroupBox1: TcxGroupBox
+    AlignWithMargins = True
+    Left = 3
+    Top = 47
+    Margins.Top = 0
+    Align = alTop
+    Caption = '[livecoin.net] price for 1 MNX (update: 15.12.2017)'
+    TabOrder = 6
+    ExplicitTop = 44
+    Height = 86
+    Width = 414
+    object cxPageControl2: TcxPageControl
+      Left = 3
+      Top = 15
+      Width = 408
+      Height = 61
+      Align = alClient
+      TabOrder = 0
+      Properties.ActivePage = cxTabSheet5
+      Properties.CustomButtons.Buttons = <>
+      ExplicitHeight = 63
+      ClientRectBottom = 59
+      ClientRectLeft = 2
+      ClientRectRight = 406
+      ClientRectTop = 26
+      object cxTabSheet5: TcxTabSheet
+        Caption = 'USD'
+        ImageIndex = 0
+        ExplicitWidth = 285
+        ExplicitHeight = 165
+        object cxLabel1: TcxLabel
+          Left = 7
+          Top = 7
+          Caption = 'ask:'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.TextColor = 15066597
+          Style.IsFontAssigned = True
+          Transparent = True
+        end
+        object cxSpinEdit_USDASK: TcxSpinEdit
+          Left = 40
+          Top = 6
+          Properties.AssignedValues.MinValue = True
+          Properties.ImmediatePost = True
+          Properties.ValueType = vtFloat
+          TabOrder = 1
+          Value = 31.000000000000000000
+          Width = 157
+        end
+        object cxLabel21: TcxLabel
+          Left = 210
+          Top = 7
+          Caption = 'bid:'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.TextColor = 15066597
+          Style.IsFontAssigned = True
+          Transparent = True
+          Visible = False
+        end
+        object cxSpinEdit_USDBID: TcxSpinEdit
+          Left = 240
+          Top = 6
+          Properties.AssignedValues.MinValue = True
+          Properties.ImmediatePost = True
+          Properties.ValueType = vtFloat
+          TabOrder = 3
+          Value = 12.500000000000000000
+          Visible = False
+          Width = 157
+        end
+      end
+      object cxTabSheet6: TcxTabSheet
+        Caption = 'BTC'
+        ImageIndex = 1
+        ExplicitWidth = 285
+        ExplicitHeight = 165
+        object cxLabel27: TcxLabel
+          Left = 7
+          Top = 7
+          Caption = 'ask:'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.TextColor = 15066597
+          Style.IsFontAssigned = True
+          Transparent = True
+        end
+        object cxSpinEdit_BTCASK: TcxSpinEdit
+          Left = 40
+          Top = 6
+          Properties.AssignedValues.MinValue = True
+          Properties.ImmediatePost = True
+          Properties.ValueType = vtFloat
+          TabOrder = 1
+          Value = 0.001831120000000000
+          Width = 157
+        end
+        object cxLabel28: TcxLabel
+          Left = 210
+          Top = 7
+          Caption = 'bid:'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.TextColor = 15066597
+          Style.IsFontAssigned = True
+          Transparent = True
+          Visible = False
+        end
+        object cxSpinEdit_BTCBID: TcxSpinEdit
+          Left = 240
+          Top = 6
+          Properties.AssignedValues.MinValue = True
+          Properties.ImmediatePost = True
+          Properties.ValueType = vtFloat
+          TabOrder = 3
+          Value = 12.500000000000000000
+          Visible = False
+          Width = 157
+        end
+      end
+      object cxTabSheet7: TcxTabSheet
+        Caption = 'ETH'
+        ImageIndex = 2
+        ExplicitWidth = 285
+        ExplicitHeight = 165
+        object cxLabel29: TcxLabel
+          Left = 7
+          Top = 7
+          Caption = 'ask:'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.TextColor = 15066597
+          Style.IsFontAssigned = True
+          Transparent = True
+        end
+        object cxSpinEdit_ETHASK: TcxSpinEdit
+          Left = 40
+          Top = 6
+          Properties.AssignedValues.MinValue = True
+          Properties.ImmediatePost = True
+          Properties.ValueType = vtFloat
+          TabOrder = 1
+          Value = 0.033806140000000000
+          Width = 157
+        end
+        object cxLabel30: TcxLabel
+          Left = 210
+          Top = 7
+          Caption = 'bid:'
+          ParentFont = False
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -11
+          Style.Font.Name = 'Tahoma'
+          Style.Font.Style = [fsBold]
+          Style.TextColor = 15066597
+          Style.IsFontAssigned = True
+          Transparent = True
+          Visible = False
+        end
+        object cxSpinEdit_ETHBID: TcxSpinEdit
+          Left = 240
+          Top = 6
+          Properties.AssignedValues.MinValue = True
+          Properties.ImmediatePost = True
+          Properties.ValueType = vtFloat
+          TabOrder = 3
+          Value = 12.500000000000000000
+          Visible = False
+          Width = 157
+        end
+      end
+    end
+  end
+  object cxButton5: TcxButton
+    Left = 276
+    Top = 241
+    Width = 136
+    Height = 25
+    Caption = 'Settings'
     Enabled = False
-    Properties.DropDownListStyle = lsFixedList
-    Properties.ImmediatePost = True
-    Properties.Items.Strings = (
-      'English'
-      'Russian')
-    Style.LookAndFeel.NativeStyle = False
-    StyleDisabled.LookAndFeel.NativeStyle = False
-    StyleFocused.LookAndFeel.NativeStyle = False
-    StyleHot.LookAndFeel.NativeStyle = False
+    OptionsImage.Glyph.SourceDPI = 96
+    OptionsImage.Glyph.Data = {
+      89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+      610000001974455874536F6674776172650041646F626520496D616765526561
+      647971C9653C00000027744558745469746C650043616C63756C6174696F6E3B
+      43616C63756C6174696F6E733B4F7074696F6E733BE8BCAA3F00000291494441
+      54785E8D905B48944D1CC69F79DF773D9B12465AA0B05A885DA41DD03271F390
+      B56B0479E8888A7911E245825044615D44878BA4C2BE8F8850A91B89B288C490
+      EC206490DBAEAD6626A950B2D2A27B5ED7D599DC996D1349E80F03CF0CCFFCF8
+      CD90BB0F3FF64892A4C13F0CA5F4554D69463E638C2230CA94D9A6A9AFD92576
+      8C818900060204B218826BFFBDD6009000FC0150CAE0079EEB322FA9537F08B6
+      E80270B1301E8C31415A320A63E2528844B14D1D8B3095044204883260D63B8F
+      BEAF56EE440500CB0082303E69476C84122CF12EB76098F86103B00EF8BB01E5
+      06CD47360837C113BD400ACF4DE0FBDD3B937169B901A502DCF16204738BBAE5
+      FBD3F0B87384934AB4A91CE3B0D9D16718C7DBF783686EE9F61242624E35B6D8
+      FDF60A03E5659BD50D16509FB1BB90961C07A7C38549F334DC1E377A172F5796
+      6B70A7B50B15B5970F785C6EA7D7EB32884F644045693A4044AE2ACB40649882
+      DB2DCF204B122CD30E94E83291B43E0E078B77A0FB8DA12D6E75343E7D1EEB94
+      28A5FCB71F3C35E15EBB81DBDCEF30413F68464A5202E6E67CA83BA183D1388C
+      C3558D300E0CA3FA6821AC335658CC53BDDC006098B17A209E4316B3133EDF3C
+      54A1D118FA32C121EFFA47A0D5E6A15F6F82766F363EE887169EB75FBDAE50C6
+      B8766DC5760022D7556622325C85474F7AA04E5C0B59969093BD05A6E109EC29
+      C8824A9691BA512D93B2D3F5CAE8E8F8CB930D6D795488042139592918301AE1
+      7FEBD90BFFA3A8281BD5C70A30F6ED3BCE9CBF85E85551B0587E6A0880100032
+      775F369BB6EAD4111131E994B19835F189572A8FEBA26EDC6C75CEBA1D0D8CC0
+      EAF3B8F4608CADB80250094048EEBEBAA6FCE27AB639EB501380D0C03921BCB8
+      C2104282915B8A4501CCFF7EF02F466A4CBA6EFDCB5A0000000049454E44AE42
+      6082}
+    TabOrder = 7
+    OnClick = cxButton5Click
+  end
+  object cxGroupBox5: TcxGroupBox
+    AlignWithMargins = True
+    Left = 3
+    Top = 297
+    Align = alBottom
+    Caption = 'results'
     TabOrder = 8
-    Text = 'English'
-    Width = 125
+    ExplicitTop = 274
+    Height = 138
+    Width = 414
+    object cxGrid1: TcxGrid
+      Left = 3
+      Top = 15
+      Width = 408
+      Height = 113
+      Align = alClient
+      TabOrder = 0
+      ExplicitLeft = 60
+      ExplicitTop = 22
+      ExplicitWidth = 250
+      ExplicitHeight = 200
+      object cxGrid1TableView1: TcxGridTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        DataController.Data = {
+          1D0100000F00000044617461436F6E74726F6C6C657231070000001200000054
+          6378537472696E6756616C75655479706512000000546378537472696E675661
+          6C75655479706512000000546378537472696E6756616C756554797065120000
+          00546378537472696E6756616C75655479706512000000546378537472696E67
+          56616C75655479706512000000546378537472696E6756616C75655479706512
+          000000546378537472696E6756616C75655479706504000000445855464D5400
+          00040000005900650061007200010101010101445855464D540000050000004D
+          006F006E0074006800010101010101445855464D540000040000005700650065
+          006B00010101010101445855464D540000030000004400610079000101010101
+          01}
+        OptionsView.GroupByBox = False
+        object cxGrid1TableView1Column1: TcxGridColumn
+          MinWidth = 45
+          Options.Editing = False
+          Options.Filtering = False
+          Options.HorzSizing = False
+          Options.Sorting = False
+          Width = 45
+        end
+        object cxGrid1TableView1Column7: TcxGridColumn
+          Caption = 'count'
+          MinWidth = 43
+          Options.Editing = False
+          Options.Filtering = False
+          Options.HorzSizing = False
+          Width = 43
+        end
+        object cxGrid1TableView1Column3: TcxGridColumn
+          Caption = 'MNX total'
+          Options.Filtering = False
+          Options.Sorting = False
+          Width = 105
+        end
+        object cxGrid1TableView1Column2: TcxGridColumn
+          Caption = 'MNX profit'
+          Options.Filtering = False
+          Options.Sorting = False
+          Width = 101
+        end
+        object cxGrid1TableView1Column4: TcxGridColumn
+          Caption = 'USD profit'
+          Options.Filtering = False
+          Options.Sorting = False
+          Width = 119
+        end
+        object cxGrid1TableView1Column5: TcxGridColumn
+          Caption = 'BTC profit'
+          Options.Filtering = False
+          Options.Sorting = False
+          Width = 114
+        end
+        object cxGrid1TableView1Column6: TcxGridColumn
+          Caption = 'ETH profit'
+          Options.Filtering = False
+          Options.Sorting = False
+          Width = 135
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1TableView1
+      end
+    end
   end
   object dxSkinController1: TdxSkinController
     NativeStyle = False
     SkinName = 'Office2016Dark'
-    Left = 240
-    Top = 152
+    Left = 261
+    Top = 65532
   end
   object SslHttpCli1: TSslHttpCli
     URL = 'http://minexbank.com/api/finance/parking/type?page=1'
@@ -601,8 +964,8 @@ object Form1: TForm1
     SocketFamily = sfIPv4
     SocketErrs = wsErrTech
     SslContext = SslContext1
-    Left = 218
-    Top = 71
+    Left = 313
+    Top = 3
   end
   object SslContext1: TSslContext
     SslDHParamLines.Strings = (
@@ -632,7 +995,7 @@ object Form1: TForm1
     SslSessionTimeout = 300
     SslSessionCacheSize = 20480
     AutoEnableBuiltinEngines = False
-    Left = 197
-    Top = 79
+    Left = 376
+    Top = 1
   end
 end
