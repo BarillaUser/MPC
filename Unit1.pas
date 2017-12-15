@@ -127,6 +127,7 @@ type
     cxSpinEdit_ETHASK: TcxSpinEdit;
     cxLabel30: TcxLabel;
     cxSpinEdit_ETHBID: TcxSpinEdit;
+    cxButton_abort: TcxButton;
     procedure cxButton1Click(Sender: TObject);
     procedure cxButton4Click(Sender: TObject);
     procedure cxButton2Click(Sender: TObject);
@@ -134,6 +135,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cxButton5Click(Sender: TObject);
+    procedure SslHttpCli1RequestDone(Sender: TObject; RqType: THttpRequest; ErrCode: Word);
+    procedure cxButton_abortClick(Sender: TObject);
   private
     { Private declarations }
     dText: string;  
@@ -243,9 +246,12 @@ var RBankRates: TRBankRatesArray;
      s: UTF8String;
      bank_c, liveco_c: Boolean;
 begin
-  bank_c:= False; liveco_c:= False;
+    cxButton_abort.Visible := True;
+    cxButton2.Visible      := False;
+
+    bank_c:= False; liveco_c:= False;
     dxStatusBar1.SimplePanelStyle.Text := 'updating rates & prices, please wait ...';
-    Form1.Enabled := False;
+
 
     if not sslcntx_init then
     begin
@@ -262,10 +268,12 @@ begin
     try
         SslContext1.InitContext;  { V8.01 get any error now before making request }
     except
-        on E:Exception do begin
+        on E:Exception do
+        begin
             ShowMessage('Failed to initialize SSL Context: ' + E.Message);
             dxStatusBar1.SimplePanelStyle.Text := 'can''t establish internet connection!';
-            Form1.Enabled := True;
+            cxButton_abort.Visible := False;
+            cxButton2.Visible      := True;
             Exit;
         end;
     end;
@@ -279,9 +287,10 @@ begin
     dxStatusBar1.SimplePanelStyle.Text := 'updating minexbank rates info, please wait ...';
     SslHttpCli1.RcvdStream := TMemoryStream.Create;
     SslHttpCli1.URL := 'http://minexbank.com/api/finance/parking/type?page=1';
-    SslHttpCli1.Get;
+
     try
         try
+         SslHttpCli1.Get;
          SslHttpCli1.RcvdStream.Position := 0;
          s := StreamToRawByteString(SslHttpCli1.RcvdStream);
         finally
@@ -293,21 +302,24 @@ begin
     except
         on E:Exception do
         begin
-            s := '';
-            SslHttpCli1.RcvdStream.Free;
-            ShowMessage('Connect error. ' + E.Classname + ': ' + E.Message);
-           // Exit;
+           s := '';
+           ShowMessage( '. Status = ' + IntToStr(SslHttpCli1.StatusCode) +  ' - ' + SslHttpCli1.ReasonPhrase);
+           dxStatusBar1.SimplePanelStyle.Text := 'Request status = ' + SslHttpCli1.ReasonPhrase;
+           cxButton_abort.Visible := False;
+           cxButton2.Visible      := True;
+           Exit;
         end;
     end;
 
   //==============================================================
-  dxStatusBar1.SimplePanelStyle.Text := 'updating livecoin prices info, please wait ...';
+ (* *) dxStatusBar1.SimplePanelStyle.Text := 'updating livecoin prices info, please wait ...';
   s := '';
   SslHttpCli1.RcvdStream := TMemoryStream.Create;
   SslHttpCli1.URL := 'https://www.livecoin.net';
-  SslHttpCli1.Get;
+
   try
       try
+       SslHttpCli1.Get;
        SslHttpCli1.RcvdStream.Position := 0;
        s := StreamToRawByteString(SslHttpCli1.RcvdStream);
       finally
@@ -324,13 +336,16 @@ begin
         on E:Exception do
         begin
             s := '';
-            SslHttpCli1.RcvdStream.Free;
-            ShowMessage('Connect error. ' + E.Classname + ': ' + E.Message);
+            ShowMessage( '. Status = ' + IntToStr(SslHttpCli1.StatusCode) +  ' - ' + SslHttpCli1.ReasonPhrase);
+            dxStatusBar1.SimplePanelStyle.Text := 'Request status = ' + SslHttpCli1.ReasonPhrase;
+            cxButton_abort.Visible := False;
+            cxButton2.Visible      := True;
+            Exit;
         end;
   end;
 
-  
-  Form1.Enabled := True;
+  cxButton_abort.Visible := False;
+  cxButton2.Visible      := True;
 
   if bank_c and liveco_c then
   dxStatusBar1.SimplePanelStyle.Text := 'rates & prices update status: Done!'
@@ -340,7 +355,6 @@ begin
     else if not liveco_c then
       dxStatusBar1.SimplePanelStyle.Text := 'rates update - Done! | prices update: Failed!';
 
-  // bank_c, liveco_c
 
 
   __lastrateupdate := Now;
@@ -380,6 +394,11 @@ procedure TForm1.cxButton5Click(Sender: TObject);
 begin
   Application.CreateForm(TForm3, Form3);
   Form3.ShowModal;
+end;
+
+procedure TForm1.cxButton_abortClick(Sender: TObject);
+begin
+  SslHttpCli1.Abort;
 end;
 
 procedure TForm1.cxLabel13Click(Sender: TObject);
@@ -483,6 +502,11 @@ begin
       IniFile.Free;
   end;
   UpdateControlsRatesInfo;
+end;
+
+procedure TForm1.SslHttpCli1RequestDone(Sender: TObject; RqType: THttpRequest; ErrCode: Word);
+begin
+   //
 end;
 
 end.
