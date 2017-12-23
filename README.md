@@ -20,9 +20,12 @@
 =====================
  
 <h3>скриншоты:</h3>
+
 Eng:
+
 ![1](https://user-images.githubusercontent.com/34486355/34320330-f7031264-e808-11e7-9f8a-a21075a740b1.png)
 
 Rus:
+
 ![2](https://user-images.githubusercontent.com/34486355/34320331-f7273d7e-e808-11e7-9438-22a0170f5d69.png)
 
