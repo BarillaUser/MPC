@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.753,C:\Delphi\Projects\Active\MinexBankCalc\Unit1.pas=C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.659,C:\Delphi\Projects\Active\MinexBankCalc\Project1.dproj=C:\Users\1\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.362,=C:\Delphi\Projects\Active\MinexBankCalc\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.955,=C:\Delphi\Projects\Active\MinexBankCalc\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.923,=C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.608,=C:\Delphi\Projects\Active\MinexBankCalc\Unit3.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.753,C:\Delphi\Projects\Active\MinexBankCalc\Unit1.dfm=C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.271,=C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.846,=C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.091,C:\Delphi\Projects\Active\MinexBankCalc\Unit5.pas=C:\Delphi\Projects\Active\MinexBankCalc\mcpUtilsUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.513,=C:\Delphi\Projects\Active\MinexBankCalc\Unit5.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.362,=C:\Delphi\Projects\Active\MinexBankCalc\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.659,C:\Users\1\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Delphi\Projects\Active\MinexBankCalc\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.753,C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Delphi\Projects\Active\MinexBankCalc\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.608,=C:\Delphi\Projects\Active\MinexBankCalc\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.271,=C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.753,C:\Users\1\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Delphi\Projects\Active\MinexBankCalc\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.682,=C:\Delphi\Projects\Active\MinexBankCalc\Unit4.pas</Transaction>
+    <Transaction>2017.12.23 03:11:55.805,=C:\Delphi\Projects\Active\MinexBankCalc\Unit5.pas</Transaction>
   </Transactions>
 </BorlandProject>

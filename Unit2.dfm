@@ -3,8 +3,8 @@ object Form2: TForm2
   Top = 0
   BorderStyle = bsDialog
   Caption = 'info'
-  ClientHeight = 385
-  ClientWidth = 314
+  ClientHeight = 424
+  ClientWidth = 313
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,12 +13,13 @@ object Form2: TForm2
   Font.Style = []
   OldCreateOrder = False
   Position = poOwnerFormCenter
+  OnActivate = FormActivate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object cxImage1: TcxImage
-    Left = 10
+    Left = 11
     Top = 2
-    AutoSize = True
     Picture.Data = {
       0B54504E474772617068696392380200424D9238020000000000360000002800
       0000230100007D00000001002000000000005C38020000000000000000000000
@@ -4575,55 +4576,119 @@ object Form2: TForm2
     Properties.PopupMenuLayout.MenuItems = []
     Properties.ReadOnly = True
     Properties.ShowFocusRect = False
-    Style.BorderStyle = ebsOffice11
+    Style.BorderStyle = ebsNone
+    StyleFocused.BorderStyle = ebsNone
+    StyleHot.BorderStyle = ebsNone
     TabOrder = 0
     Transparent = True
+    Height = 129
+    Width = 291
   end
   object cxButton1: TcxButton
-    Left = 118
-    Top = 353
+    Left = 119
+    Top = 387
     Width = 75
     Height = 25
     Caption = 'close'
     TabOrder = 1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
     OnClick = cxButton1Click
   end
-  object cxMemo1: TcxMemo
-    Left = 11
-    Top = 137
-    Lines.Strings = (
-      'contact me: inbox2@zoho.com'
-      'donate MNX : XLJ2FXXB7gRLFiThd7WGyVgerhXje5FqBR'
-      'project home: https://github.com/BarillaUser/MPC')
-    Properties.ReadOnly = True
-    TabOrder = 2
-    Height = 60
-    Width = 295
-  end
   object cxMemo2: TcxMemo
-    Left = 11
-    Top = 224
+    Left = 13
+    Top = 214
     Lines.Strings = (
-      #1055#1088#1077#1078#1076#1077' '#1074#1089#1077#1075#1086' '#1086#1073#1086' '#1084#1085#1077', '#1103' '#1085#1077' '#1103#1074#1083#1103#1102#1089#1100' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1086#1084' '
-      'minexcoin '#1080' '#1085#1080#1082#1072#1082' '#1085#1077' '#1087#1088#1080#1095#1072#1089#1090#1077#1085' '#1082' '#1101#1090#1086#1081' '#1086#1088#1075#1072#1085#1080#1079#1072#1094#1080#1080', '
-      #1085#1077' '#1080#1084#1077#1102' '#1079#1085#1072#1082#1086#1084#1089#1090#1074' '#1080' '#1082#1086#1085#1090#1072#1082#1090#1086#1074' '#1089' '#1085#1080#1084#1080', '#1076#1072#1085#1085#1099#1081' '
-      #1089#1086#1092#1090' '#1085#1072#1087#1080#1089#1072#1085' '#1087#1088#1077#1078#1076#1077' '#1074#1089#1077#1075#1086' '#1076#1083#1103' '#1089#1077#1073#1103'.'
-      ''
-      #1055#1086#1076#1089#1095#1105#1090' '#1087#1088#1080#1073#1099#1083#1080' '#1074' '#1076#1072#1085#1085#1086#1084' '#1082#1072#1083#1100#1082#1091#1083#1103#1090#1086#1088#1077' '#1103#1074#1083#1103#1077#1090#1089#1103' '
+      #1069#1090#1086' '#1085#1077' '#1086#1092#1080#1094#1080#1072#1083#1100#1085#1072#1103' '#1080' '#1073#1077#1089#1087#1083#1072#1090#1085#1072#1103' '#1091#1090#1080#1083#1080#1090#1072' '#1089' '
+      #1086#1090#1082#1088#1099#1090#1099#1084' '#1080#1089#1093#1086#1076#1085#1099#1084' '#1082#1086#1076#1086#1084', '#1077#1105' '#1072#1074#1090#1086#1088' '#1085#1077' '#1103#1074#1083#1103#1077#1090#1089#1103' '
+      #1089#1086#1090#1088#1091#1076#1085#1080#1082#1086#1084' minex(coin) '#1080' '#1085#1080#1082#1072#1082' '#1085#1077' '#1087#1088#1080#1095#1072#1089#1090#1077#1085' '#1082' '
+      #1101#1090#1086#1081' '#1086#1088#1075#1072#1085#1080#1079#1072#1094#1080#1080'.'
+      #1055#1086#1076#1089#1095#1105#1090' '#1087#1088#1080#1073#1099#1083#1080' '#1074' '#1076#1072#1085#1085#1086#1084' '#1082#1072#1083#1100#1082#1091#1083#1103#1090#1086#1088#1077' '
+      #1103#1074#1083#1103#1077#1090#1089#1103' '
       #1087#1088#1080#1073#1083#1080#1079#1080#1090#1077#1083#1100#1085#1099#1084', '#1090#1072#1082' '#1082#1072#1082' '#1088#1101#1081#1090#1099' '#1089#1090#1072#1074#1086#1082' '#1086#1090' '
       'minexbank-a '#1084#1077#1085#1103#1102#1090#1089#1103' '#1074' '#1079#1072#1074#1080#1089#1080#1084#1086#1089#1090#1080' '#1086#1090' '#1087#1086#1083#1080#1090#1080#1082#1080' '
       #1073#1072#1085#1082#1072', '#1103' '#1083#1080#1096#1100' '#1079#1085#1072#1102', '#1095#1090#1086' '#1085#1072' '#1076#1072#1085#1085#1099#1081' '#1084#1086#1084#1077#1085#1090' '#1088#1101#1081#1090' '
       #1086#1087#1088#1077#1076#1077#1083#1103#1077#1090#1089#1103' '#1086#1090' '#1089#1090#1086#1080#1084#1086#1089#1090#1080' MNX '#1085#1072' '#1073#1080#1088#1078#1077'.')
     Properties.ReadOnly = True
     Properties.ScrollBars = ssVertical
-    TabOrder = 3
-    Height = 123
-    Width = 293
+    Style.Color = 10790052
+    TabOrder = 2
+    Height = 81
+    Width = 288
   end
   object cxLabel9: TcxLabel
-    Left = 11
-    Top = 205
-    Caption = 'Some words about:'
+    Left = 13
+    Top = 138
+    Caption = 'wtf:'
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = [fsBold]
+    Style.TextColor = clSilver
+    Style.TextStyle = []
+    Style.IsFontAssigned = True
+    Transparent = True
+  end
+  object cxButtonEdit1: TcxButtonEdit
+    Left = 61
+    Top = 137
+    Properties.Buttons = <
+      item
+        Default = True
+        Glyph.SourceDPI = 96
+        Glyph.Data = {
+          89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+          610000001974455874536F6674776172650041646F626520496D616765526561
+          647971C9653C00000025744558745469746C6500436F70793B426172733B5269
+          62626F6E3B5374616E646172643B436C6F6E656D0EDF5B0000005A4944415478
+          5EBDD0310EC0300C42D11ECC67F3D56933A40BC9174B3230613D093F922C55A5
+          4DFACBE8FF5B00004901409B00401D8937AF7A0300D94ECC37E7006F1E736802
+          014A014B0C484A005D036647BDFFC0920294A3C00BED2132B178826E4E000000
+          0049454E44AE426082}
+        Kind = bkGlyph
+      end>
+    Properties.ReadOnly = True
+    Properties.OnButtonClick = cxButtonEdit1PropertiesButtonClick
+    Style.Color = 10790052
+    TabOrder = 4
+    Text = 'inbox2@zoho.com'
+    Width = 240
+  end
+  object cxButtonEdit3: TcxButtonEdit
+    Left = 61
+    Top = 164
+    Properties.Buttons = <
+      item
+        Default = True
+        Glyph.SourceDPI = 96
+        Glyph.Data = {
+          89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+          610000001974455874536F6674776172650041646F626520496D616765526561
+          647971C9653C00000025744558745469746C6500436F70793B426172733B5269
+          62626F6E3B5374616E646172643B436C6F6E656D0EDF5B0000005A4944415478
+          5EBDD0310EC0300C42D11ECC67F3D56933A40BC9174B3230613D093F922C55A5
+          4DFACBE8FF5B00004901409B00401D8937AF7A0300D94ECC37E7006F1E736802
+          014A014B0C484A005D036647BDFFC0920294A3C00BED2132B178826E4E000000
+          0049454E44AE426082}
+        Kind = bkGlyph
+      end>
+    Properties.ReadOnly = True
+    Properties.OnButtonClick = cxButtonEdit3PropertiesButtonClick
+    Style.Color = 10790052
+    TabOrder = 5
+    Text = 'https://github.com/BarillaUser/MPC'
+    Width = 240
+  end
+  object cxLabel1: TcxLabel
+    Left = 13
+    Top = 191
+    Caption = 'some words about:'
     ParentFont = False
     Style.Font.Charset = DEFAULT_CHARSET
     Style.Font.Color = clWindowText
@@ -4634,5 +4699,175 @@ object Form2: TForm2
     Style.TextStyle = [fsUnderline]
     Style.IsFontAssigned = True
     Transparent = True
+  end
+  object cxLabel3: TcxLabel
+    Left = 13
+    Top = 165
+    Caption = 'home:'
+    ParentFont = False
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Tahoma'
+    Style.Font.Style = [fsBold]
+    Style.TextColor = clSilver
+    Style.TextStyle = []
+    Style.IsFontAssigned = True
+    Transparent = True
+  end
+  object cxGroupBox1: TcxGroupBox
+    Left = 14
+    Top = 301
+    Caption = 'donations'
+    TabOrder = 8
+    Height = 76
+    Width = 287
+    object cxButtonEdit4: TcxButtonEdit
+      Left = 46
+      Top = 18
+      ParentFont = False
+      Properties.Buttons = <
+        item
+          Default = True
+          Glyph.SourceDPI = 96
+          Glyph.Data = {
+            89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+            610000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C00000025744558745469746C6500436F70793B426172733B5269
+            62626F6E3B5374616E646172643B436C6F6E656D0EDF5B0000005A4944415478
+            5EBDD0310EC0300C42D11ECC67F3D56933A40BC9174B3230613D093F922C55A5
+            4DFACBE8FF5B00004901409B00401D8937AF7A0300D94ECC37E7006F1E736802
+            014A014B0C484A005D036647BDFFC0920294A3C00BED2132B178826E4E000000
+            0049454E44AE426082}
+          Kind = bkGlyph
+        end>
+      Properties.ReadOnly = True
+      Properties.OnButtonClick = cxButtonEdit4PropertiesButtonClick
+      Style.Color = 10790052
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -11
+      Style.Font.Name = 'Calibri'
+      Style.Font.Style = []
+      Style.TextStyle = []
+      Style.IsFontAssigned = True
+      TabOrder = 0
+      Text = 'XLJ2FXXB7gRLFiThd7WGyVgerhXje5FqBR'
+      Width = 233
+    end
+    object cxLabel5: TcxLabel
+      Left = 11
+      Top = 19
+      Caption = 'MNX:'
+      ParentFont = False
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -11
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = [fsBold]
+      Style.TextColor = clSilver
+      Style.TextStyle = []
+      Style.IsFontAssigned = True
+      Transparent = True
+    end
+    object cxLabel6: TcxLabel
+      Left = 124
+      Top = 45
+      Caption = 'donations balance: 0 mnx'
+      ParentFont = False
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -11
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = [fsBold]
+      Style.TextColor = clSilver
+      Style.TextStyle = []
+      Style.IsFontAssigned = True
+      Properties.Alignment.Horz = taRightJustify
+      Transparent = True
+      AnchorX = 251
+    end
+    object cxButton3: TcxButton
+      Left = 257
+      Top = 45
+      Width = 20
+      Height = 17
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        610000001974455874536F6674776172650041646F626520496D616765526561
+        647971C9653C00000011744558745469746C650052657365743B556E646F3B13
+        8116FF0000008F49444154785EC5D3BD09C0201485D1B78838442AC179AC9D20
+        33A5B3CC1829D3BB84B9810B863C8B6802290E22C207FE4929E5956F02DEFB19
+        840C4448902941E49A800A14461C2C9C2B5C73CD006D1C57086029C07A89181D
+        A87698406EA64B24360315CF440B0C24157818B10CE47BA0A93790580F20BD5B
+        384506D691433C195846AF91C61F928C3EE5FF7FE301B8B3E0B0128887170000
+        000049454E44AE426082}
+      PaintStyle = bpsGlyph
+      SpeedButtonOptions.Flat = True
+      SpeedButtonOptions.Transparent = True
+      TabOrder = 3
+      OnClick = cxButton3Click
+    end
+  end
+  object SslHttpCli1: TSslHttpCli
+    URL = 'http://minexbank.com/api/finance/parking/type?page=1'
+    LocalAddr = '0.0.0.0'
+    LocalAddr6 = '::'
+    ProxyPort = '80'
+    Agent = 
+      'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:57.0) Gecko/20100101 Fire' +
+      'fox/57.0'
+    Accept = 'image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*'
+    AcceptLanguage = 'en'
+    Connection = 'Keep-Alive'
+    NoCache = False
+    ContentTypePost = 'application/x-www-form-urlencoded'
+    RequestVer = '1.0'
+    FollowRelocation = True
+    LocationChangeMaxCount = 5
+    ServerAuth = httpAuthNone
+    ProxyAuth = httpAuthNone
+    BandwidthLimit = 10000
+    BandwidthSampling = 1000
+    Options = [httpoEnableContentCoding]
+    Timeout = 30
+    SocksAuthentication = socksNoAuthentication
+    SocketFamily = sfIPv4
+    SocketErrs = wsErrTech
+    SslContext = SslContext1
+    Left = 113
+    Top = 53
+  end
+  object SslContext1: TSslContext
+    SslDHParamLines.Strings = (
+      '-----BEGIN DH PARAMETERS-----'
+      'MIIBCAKCAQEA5lgSzWKPV8ZthosYUuPWuawgmUFfSyR/1srizVn7tXNPYE10Pz/t'
+      'z1i0f1JppaoBBdFQMQnVlTrZjEIinavAZwLH9HRbmjvglO0gNL46NpgzgcXQbKbn'
+      'jZs4BSFF9LbhP4VvvIIKI7lR/yQFNw5GtKtV+Pi/tZ5dCaRvALadAtzAXOmEadv0'
+      'KNZXc7hONXf9kyRmtwr6C5AdeIH50enVBss6zRwwGi3fW7e5D6z3FvUrHzD9fot+'
+      'y89hX5iXD/v3BurTkN3rG12JoTypQ3W1VD1lEfRrJm8rbvQTqO0RCSgxc2KwIULb'
+      '3ONsf1ln/Lb+UuRiUpGeb4GQqPDkn7XW8wIBAg=='
+      '-----END DH PARAMETERS-----')
+    SslVerifyPeer = False
+    SslVerifyDepth = 9
+    SslVerifyFlags = []
+    SslCheckHostFlags = []
+    SslSecLevel = sslSecLevel80bits
+    SslOptions = [sslOpt_MICROSOFT_SESS_ID_BUG, sslOpt_NETSCAPE_CHALLENGE_BUG, sslOpt_NETSCAPE_REUSE_CIPHER_CHANGE_BUG, sslOpt_MICROSOFT_BIG_SSLV3_BUFFER, sslOpt_SSLEAY_080_CLIENT_DH_BUG, sslOpt_TLS_D5_BUG, sslOpt_TLS_BLOCK_PADDING_BUG, sslOpt_TLS_ROLLBACK_BUG, sslOpt_NO_SSLv2, sslOpt_NO_SSLv3, sslOpt_NETSCAPE_CA_DN_BUG, sslOpt_NETSCAPE_DEMO_CIPHER_CHANGE_BUG]
+    SslOptions2 = [sslOpt2_NO_RENEGOTIATION, sslOpt2_NO_COMPRESSION, sslOpt2_NO_TICKET, sslOpt2_TLS_ROLLBACK_BUG, sslOpt2_DONT_INSERT_EMPTY_FRAGMENTS, sslOpt2_ALLOW_UNSAFE_LEGACY_RENEGOTIATION, sslOpt2_TLSEXT_PADDING, sslOpt2_SAFARI_ECDHE_ECDSA_BUG, sslOpt2_CISCO_ANYCONNECT, SslOpt2_LEGACY_SERVER_CONNECT, SslOpt2_ALLOW_NO_DHE_KEX]
+    SslVerifyPeerModes = [SslVerifyMode_PEER]
+    SslSessionCacheModes = [sslSESS_CACHE_CLIENT, sslSESS_CACHE_NO_INTERNAL_LOOKUP, sslSESS_CACHE_NO_INTERNAL_STORE]
+    SslCipherList = 'ALL:!ADH:RC4+RSA:+SSLv2:@STRENGTH'
+    SslVersionMethod = sslBestVer_CLIENT
+    SslMinVersion = sslVerSSL3
+    SslMaxVersion = sslVerMax
+    SslECDHMethod = sslECDHAuto
+    SslCryptoGroups = 'P-256:P-384:P-512'
+    SslSessionTimeout = 300
+    SslSessionCacheSize = 20480
+    AutoEnableBuiltinEngines = False
+    Left = 187
+    Top = 55
   end
 end

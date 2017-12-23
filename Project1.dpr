@@ -3,7 +3,7 @@ program Project1;
 {
 *************************************************************************
 prj: MinexBank Profit Calculator
-ver: 0.1
+ver: 0.3
 wtf address : inbox2@zoho.com
 donate MNX  : XLJ2FXXB7gRLFiThd7WGyVgerhXje5FqBR
 
@@ -16,7 +16,12 @@ Used components\libs:
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {Form1};
+  Unit1 in 'Unit1.pas' {Form1},
+  mcpUtilsUnit in 'mcpUtilsUnit.pas',
+  Unit5 in 'Unit5.pas';
+
+{Form1}
+
 
 {$R *.res}
 
